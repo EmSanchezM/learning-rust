@@ -1,9 +1,9 @@
 /*
 Escribir y comprobar un programa que resuelva la ecuación cuadrática (ax2 + bx + c = 0).
 
- Si Discriminante > 0, la ecuación tiene dos soluciones reales y distintas.
- Si Discriminante = 0, la ecuación tiene dos soluciones reales e iguales (raíces coincidentes).
- Si Discriminante < 0, la ecuación no tiene soluciones reales, las soluciones son números 
+Si Discriminante > 0, la ecuación tiene dos soluciones reales y distintas.
+Si Discriminante = 0, la ecuación tiene dos soluciones reales e iguales (raíces coincidentes).
+Si Discriminante < 0, la ecuación no tiene soluciones reales, las soluciones son números 
 
 Casos de prueba: 
  - Discriminante > 0, a=1; b=-5; c=6;
