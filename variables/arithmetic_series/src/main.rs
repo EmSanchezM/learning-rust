@@ -27,7 +27,6 @@ fn main() {
     let mut summation: u64 = 0;
 
     while i <= n {
-        println!("Valor de i: {}", i);
         if i % 2 == 0 {
             summation += i*i;
         } else {
