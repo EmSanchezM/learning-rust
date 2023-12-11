@@ -17,7 +17,7 @@ Un sistema de ecuaciones incompatible si no tiene solución.
 
 La fórmula de Sarrus para determinar si un sistema determinado tiene solución única:
     det=ae−bd
-donde det es el determinante;
+donde det es el determinante del sistema;
 Si determinante es distinto de cero tiene solución única.
 
 Regla de crammer:
