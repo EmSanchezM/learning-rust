@@ -1,6 +1,6 @@
 /*
 Dado un número real p entre cero y uno, un número entero n positivo, y otro número entero i comprendido entre 0 y n, se
-sabe que si un suceso tiene pr obabilidad de que ocurra p, y el experimento aleatorio se repite n veces, la probabilidad de
+sabe que si un suceso tiene probabilidad de que ocurra p, y el experimento aleatorio se repite n veces, la probabilidad de
 que el suceso ocurra i veces viene dado por la función binomial de parámetros n, p e i dada por la siguiente fórmula:
 
 Probabilidad(X=i) = combinatoria(n,i) * p^i * (1-p)^n-i; Donde:
@@ -38,7 +38,7 @@ fn read() -> f64 {
 fn pow(base: f64, exponent: f64) -> f64 {
     let mut result: f64 = 1.0;
     let iterator = exponent as u64;
-    
+
     for _ in 0..iterator {
         result *= base;
     }
