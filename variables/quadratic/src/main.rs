@@ -39,6 +39,15 @@ fn main() {
         let x = -b / (2.0 * a);
         println!("La ecuación tiene una raíz doble en x = {}", x);
     } else {
-        println!("La ecuación no tiene raíces reales");
+        let discriminant_root_aux = -1.0*discriminant;
+        let discriminant_root = discriminant_root_aux.sqrt();
+        let x1 = -b / (2.0 * a);
+        let x2 = discriminant_root / (2.0 * a);
+
+        println!("La primera solución es: ");
+        println!("Parte real = {} y parte imaginaria = {}", x1, x2);
+
+        println!("La segunda solución es: ");
+        println!("Parte real = {} y parte imaginaria = {}", x1, -x2);
     }
 }
