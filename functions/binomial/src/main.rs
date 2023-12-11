@@ -38,6 +38,7 @@ fn read() -> f64 {
 fn pow(base: f64, exponent: f64) -> f64 {
     let mut result: f64 = 1.0;
     let iterator = exponent as u64;
+    
     for _ in 0..iterator {
         result *= base;
     }
