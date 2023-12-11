@@ -70,14 +70,14 @@ fn binomial(n: f64, success_probability: f64, number_of_successes: f64) -> f64 {
     let p2 = pow(1.0-success_probability, aux_exponent);
 
     let p3 = p1 * p2;
-    
+
     let probability = combinatoria(n, number_of_successes) * p3;
 
     probability
 }
 
 fn main() {
-    println!("Ingrese el número de intentos de 'n': ");
+    println!("Ingrese el número de intentos 'n': ");
     let n: f64 = read();
 
     println!("Ingrese la probabilidad de éxito: ");
