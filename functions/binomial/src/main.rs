@@ -25,6 +25,8 @@ Si se selecciona al azar un lote de 100 discos duros, ¿cuál es la probabilidad
 Experimento binomial: Cada disco duro tiene dos resultados posibles: defectuoso (éxito) o no defectuoso (fracaso).
 Número de intentos: Se seleccionan 100 discos duros.
 Probabilidad de éxito: La probabilidad de que un disco duro sea defectuoso es p=0.02.
+
+n=100; success_probability=0.02; number_of_successes=3;
 */
 
 fn read() -> f64 {
@@ -62,7 +64,8 @@ fn combinatoria(m: f64, n: f64) -> f64 {
 
 fn binomial(n: f64, success_probability: f64, number_of_successes: f64) -> f64 {
     let p1 = pow(success_probability, number_of_successes);
-    let p2 = pow(1.0-success_probability, number_of_successes-1.0);
+    let aux_exponent = n - number_of_successes;
+    let p2 = pow(1.0-success_probability, aux_exponent);
     let p3 = p1 * p2;
     let probability = combinatoria(n, number_of_successes) * p3;
 
