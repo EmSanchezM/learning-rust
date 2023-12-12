@@ -15,7 +15,7 @@ Supongamos que en promedio llegan 5 clientes por hora a un servicio al cliente.
 Distribución de Poisson: La tasa promedio de llegada de clientes es 5 por hora.
 Número de eventos: 3 clientes.
 
-m=5; r=3; probility=14.04%
+m=5; r=3; probility=14.037%
 
 Caso 2: Accidentes de tráfico
 Supongamos que en promedio hay 2 accidentes de tráfico por día en una intersección particular. 
