@@ -35,17 +35,6 @@ fn read() -> f64 {
     input.trim().parse().expect("Entrada no válida, ingrese un número válido")
 }
 
-fn pow(base: f64, exponent: f64) -> f64 {
-    let mut result: f64 = 1.0;
-    let iterator = exponent as u64;
-
-    for _ in 0..iterator {
-        result *= base;
-    }
-
-    result
-}
-
 fn factorial(n: f64) -> f64 {
     if n <= 1.0 {
         1.0
@@ -64,10 +53,10 @@ fn combinatoria(m: f64, n: f64) -> f64 {
 }
 
 fn binomial(n: f64, success_probability: f64, number_of_successes: f64) -> f64 {
-    let p1 = pow(success_probability, number_of_successes);
+    let p1 = f64::powf(success_probability, number_of_successes);
 
     let aux_exponent = n - number_of_successes;
-    let p2 = pow(1.0-success_probability, aux_exponent);
+    let p2 = f64::powf(1.0-success_probability, aux_exponent);
 
     let p3 = p1 * p2;
 
