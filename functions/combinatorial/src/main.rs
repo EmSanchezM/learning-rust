@@ -25,13 +25,13 @@ fn factorial(n: i64) -> i64 {
     }
 }
 
-fn combinatoria(m: i64, n: i64) -> i64 {
+fn combinatorial(m: i64, n: i64) -> i64 {
     let numerator = factorial(m);
     let denominator = factorial(n) * factorial(m-n);
 
-    let combinatoria: i64 = numerator / denominator;
+    let result: i64 = numerator / denominator;
 
-    combinatoria
+    result
 }
 
 fn main() {
@@ -41,7 +41,7 @@ fn main() {
     println!("Ingrese el valor de 'n': ");
     let n: i64 = read();
     
-    let result = combinatoria(m, n);
+    let result = combinatorial(m, n);
 
     println!("El número combinatorio m sobre n es: {}", result);
 }
