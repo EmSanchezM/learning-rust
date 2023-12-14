@@ -43,13 +43,13 @@ fn factorial(n: f64) -> f64 {
     }
 }
 
-fn combinatoria(m: f64, n: f64) -> f64 {
+fn combinatorial(m: f64, n: f64) -> f64 {
     let numerator = factorial(m);
     let denominator = factorial(n) * factorial(m-n);
 
-    let combinatoria: f64 = numerator / denominator;
+    let combinatorial: f64 = numerator / denominator;
 
-    combinatoria
+    combinatorial
 }
 
 fn binomial(n: f64, success_probability: f64, number_of_successes: f64) -> f64 {
@@ -60,7 +60,7 @@ fn binomial(n: f64, success_probability: f64, number_of_successes: f64) -> f64 {
 
     let p3 = p1 * p2;
 
-    let probability = combinatoria(n, number_of_successes) * p3;
+    let probability = combinatorial(n, number_of_successes) * p3;
 
     probability
 }

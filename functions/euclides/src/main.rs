@@ -52,5 +52,5 @@ fn main() {
     let mcd_subtraction_method = euclides_subtraction_method(a, b);
 
     println!("El MCD de {} y {} es: {}", a, b, mcd);
-    println!("Por metodo de restas el MCD de {} y {} es: {}", a, b, mcd_subtraction_method);
+    println!("Por método de restas el MCD de {} y {} es: {}", a, b, mcd_subtraction_method);
 }

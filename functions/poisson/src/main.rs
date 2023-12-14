@@ -23,7 +23,7 @@ Supongamos que en promedio hay 2 accidentes de tráfico por día en una intersec
 Distribución de Poisson: La tasa promedio de accidentes es 2 por día.
 Número de eventos: 0 accidentes.
 
-m=2; r=0; probility=13.53%
+m=2; r=0; probability=13.53%
 */
 
 fn read() -> f64 {
