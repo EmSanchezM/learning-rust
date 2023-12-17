@@ -3,6 +3,10 @@ Escribir un programa que lea y escriba la información de 10 clientes de una det
 nombre, el número de unidades solicitadas, el precio de cada unidad y el estado en que se encuentra: moroso, atrasado,
 pagado.
 Añadir al programa una función que permita mostrar la factura de todos los clientes de cada una de las categorías moroso, atrasado o pagado.
+CONCEPTOS:
+Definicion de structs simples con tipos de datos genericos. 
+TODO:
+Aún no aplicamos el concepto de impl
 */
 
 struct Customer {
