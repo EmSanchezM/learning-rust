@@ -4,7 +4,7 @@ nombre, el número de unidades solicitadas, el precio de cada unidad y el estado
 pagado.
 Añadir al programa una función que permita mostrar la factura de todos los clientes de cada una de las categorías moroso, atrasado o pagado.
 CONCEPTOS:
-Definicion de structs simples con tipos de datos genericos. 
+Definicion de structs simples con tipos de datos genericos.
 TODO:
 Aún no aplicamos el concepto de impl
 */
@@ -13,39 +13,60 @@ struct Customer {
     name: String,
     number_of_units_ordered: i64,
     price_per_unit: f64,
-    status: String
+    status: String,
 }
 
 fn read_i64() -> i64 {
     let mut input = String::new();
-    std::io::stdin().read_line(&mut input).expect("Error al leer la entrada");
-    input.trim().parse().expect("Entrada no válida, ingrese un número válido")
+    std::io::stdin()
+        .read_line(&mut input)
+        .expect("Error al leer la entrada");
+    input
+        .trim()
+        .parse()
+        .expect("Entrada no válida, ingrese un número válido")
 }
 
 fn read_f64() -> f64 {
     let mut input = String::new();
-    std::io::stdin().read_line(&mut input).expect("Error al leer la entrada");
-    input.trim().parse().expect("Entrada no válida, ingrese un número válido")
+    std::io::stdin()
+        .read_line(&mut input)
+        .expect("Error al leer la entrada");
+    input
+        .trim()
+        .parse()
+        .expect("Entrada no válida, ingrese un número válido")
 }
 
 fn read() -> String {
     let mut input = String::new();
-    std::io::stdin().read_line(&mut input).expect("Error al leer la entrada");
+    std::io::stdin()
+        .read_line(&mut input)
+        .expect("Error al leer la entrada");
     input.trim().to_string()
 }
 
 fn display_customers(customers: &Vec<Customer>, status: &str) {
-    let customers_by_status: Vec<&Customer> = customers.iter().filter(|customer| customer.status == status).collect();
+    let customers_by_status: Vec<&Customer> = customers
+        .iter()
+        .filter(|customer| customer.status == status)
+        .collect();
 
     println!("Clientes {}", status);
     for customer_by_status in &customers_by_status {
-        println!("Nombre: {} ------------- Estado: {}", customer_by_status.name, customer_by_status.status);
-        println!("Unidades ordenadas: {} ------------- Precio por unidad: {}", customer_by_status.number_of_units_ordered, customer_by_status.price_per_unit);
+        println!(
+            "Nombre: {} ------------- Estado: {}",
+            customer_by_status.name, customer_by_status.status
+        );
+        println!(
+            "Unidades ordenadas: {} ------------- Precio por unidad: {}",
+            customer_by_status.number_of_units_ordered, customer_by_status.price_per_unit
+        );
     }
     println!("------------------------------------------------------");
 }
 
-fn create_customer() -> Customer {
+fn create_customer(customers: &mut Vec<Customer>) {
     println!("Ingrese el nombre del cliente: ");
     let name = read();
 
@@ -58,12 +79,12 @@ fn create_customer() -> Customer {
     println!("Ingrese el estado del cliente (MOROSO, PAGADO, ATRASADO): ");
     let status = read();
 
-    Customer {
+    customers.push(Customer {
         name,
         number_of_units_ordered,
         price_per_unit,
         status,
-    }
+    })
 }
 
 fn main() {
@@ -110,7 +131,7 @@ fn main() {
         price_per_unit: 350.0,
         status: String::from("PAGADO"),
     });
-    
+
     loop {
         println!("--- Menú ---");
         println!("1. Agregar un nuevo cliente");
@@ -121,11 +142,13 @@ fn main() {
 
         println!("Ingrese el número de la opción deseada:");
         let mut input = String::new();
-        std::io::stdin().read_line(&mut input).expect("Error al leer la entrada");
+        std::io::stdin()
+            .read_line(&mut input)
+            .expect("Error al leer la entrada");
         let option = input.trim();
 
         match option {
-            "1" => customers.push(create_customer()),
+            "1" => create_customer(&mut customers),
             "2" => display_customers(&customers, "MOROSO"),
             "3" => display_customers(&customers, "PAGADO"),
             "4" => display_customers(&customers, "ATRASADO"),
