@@ -87,9 +87,7 @@ fn create_customer(customers: &mut Vec<Customer>) {
     })
 }
 
-fn main() {
-    let mut customers: Vec<Customer> = Vec::new();
-
+fn initial_data(customers: &mut Vec<Customer>) {
     customers.push(Customer {
         name: String::from("Daniela castillo"),
         number_of_units_ordered: 50,
@@ -131,6 +129,12 @@ fn main() {
         price_per_unit: 350.0,
         status: String::from("PAGADO"),
     });
+}
+
+fn main() {
+    let mut customers: Vec<Customer> = Vec::new();
+
+    initial_data(&mut customers);
 
     loop {
         println!("--- Menú ---");
